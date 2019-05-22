@@ -1,12 +1,12 @@
 const express = require('express');
-const helment = require('helmet');
+const helmet = require('helmet');
 
-const Router = require('..//');
+const Router = require('../cohort/cohortRouter');
 
 const server = express();
 
 server.use(helmet());
 server.use(express.json());
-server.use('', Router);
+server.use('api/cohorts', Router);
 
 module.exports = server;
