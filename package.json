@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/sdoylelambda/webdb-iii-challenge#readme",
   "dependencies": {
+    "cleaner": "^2.0.0-alpha",
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "helmet": "^3.18.0",
