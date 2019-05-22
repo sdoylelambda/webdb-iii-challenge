@@ -51,6 +51,11 @@ const db = knex(config)
   })
 
 
-  router.delete()
+  router.delete('/:id', (req, res) => {
+    const { id } = req.params;
+      db('cohorts').where({ id }).del()
+      .then(count => res.json({count}))
+      .catch(err => res.status(500).json(err))
+  });
 
   module.exports = router;
