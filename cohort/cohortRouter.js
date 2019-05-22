@@ -1,16 +1,9 @@
 const knex = require('knex');
 const router = require('express').Router();
 
-const config = {
-  client: 'sqlite3',
-  useNullAsDefault: true,
-  connection: {
-    filename: './data/lambda.db3'
-  },
-  debug: true
-}
+const config = require('../knexfile');
 
-const db = knex(config)
+const db = knex(config.development)
  
   router.get('/', (req, res) => {
       db('cohorts').then(records => res.status(201).json(records))
